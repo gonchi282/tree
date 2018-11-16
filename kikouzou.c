@@ -37,10 +37,18 @@ BOOL InitTree(Tree * tree){
 }
 
 // ツリー作成
-BOOL CreateTree(Tree * tree, void * node){
+BOOL CreateTree(Tree * tree, int data){
 	return TRUE;
 }
 
+// ツリー接続->次
+BOOL ConnectToNext(Tree * prevTree, Tree * nextTree){
+	return TRUE;
+}
+// ツリー接続->子
+BOOL ConnectToChild(Tree * parTree, Tree * childTree){
+	return TRUE;
+}
 // ツリー削除
 BOOL DestroyTree(Tree * tree){
 	return TRUE;

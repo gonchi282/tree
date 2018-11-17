@@ -6,13 +6,13 @@
 typedef struct tagTree{
 	struct tagTree * next;
 	struct tagTree * child;
-	int data;
+	void * data;
 }Tree;
 
 // ツリー初期化
 BOOL InitTree(Tree * tree);
 // ツリー作成
-Tree * CreateTree(int data);
+Tree * CreateTree(void * data);
 // ツリー接続->次
 //BOOL ConnectToNext(Tree * prevTree, Tree * nextTree);
 // ツリー接続->子

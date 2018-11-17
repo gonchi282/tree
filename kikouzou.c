@@ -6,27 +6,28 @@
 int main(){
 	Tree * root;
 	Tree * tree;
+	int data1 = 1, data2 = 2, data3 = 3;
 
 	// ツリー作成
-	tree = CreateTree(1);
+	tree = CreateTree(&data1);
 	// 最初のツリーをtreeに設定
 	root = tree;
 
 	// 次を接続
-	tree->next = CreateTree(2);
+	tree->next = CreateTree(&data2);
 	if(NULL == tree->next){
 		return 0;
 	}
 
 	// 子を接続
-	tree->child = CreateTree(3);
+	tree->child = CreateTree(&data3);
 	if(NULL == tree->child){
 		return 0;
 	}
 
-	printf("tree = %d\n", tree->data);
-	printf("tree2 = %d\n", tree->next->data);
-	printf("tree3 = %d\n", tree->child->data);
+	printf("tree = %d\n", *((int)(tree->data)));
+	printf("tree2 = %d\n", *((int)(tree->next->data)));
+	printf("tree3 = %d\n", *((int)(tree->child->data)));
 
 	return 0;
 }
@@ -48,7 +49,7 @@ BOOL InitTree(Tree * tree){
 }
 
 // ツリー作成
-Tree * CreateTree(int data){
+Tree * CreateTree(void * data){
 	Tree * tree;	// ツリーのアドレスを入れるためのポインタ
 
 	// treeメモリ確保
